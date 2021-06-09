@@ -1,0 +1,15 @@
+function destroyer(arr) {
+  let extract = [], res = arguments[0];
+  for (let i = 1; i < arguments.length; i++) {
+    extract.push(arguments[i]);
+  }
+  for (let i = 0; i < res.length; i++) {
+    if (extract.indexOf(res[i]) != -1) {
+      res.splice(i,1);
+      i--;
+    }
+  }
+  return res;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
