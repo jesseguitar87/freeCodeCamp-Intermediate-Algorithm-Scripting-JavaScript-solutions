@@ -1,0 +1,18 @@
+function sumFibs(num) {
+  let fib = [1,1], sum = 0, i = 0;
+  while (fib[fib.length-1] < num) {
+    fib.push(fib[fib.length-1] + fib[fib.length-2]);
+    i++;
+  }
+  if (fib[fib.length-1] > num) {
+  fib.pop();
+  }
+  for (let i = 0; i < fib.length; i++) {
+    if (fib[i] % 2 != 0) {
+      sum += fib[i];
+    }
+  }
+  return sum;
+}
+
+sumFibs(10);
