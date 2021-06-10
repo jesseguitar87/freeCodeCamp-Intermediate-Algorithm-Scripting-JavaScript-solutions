@@ -1,0 +1,17 @@
+function sumPrimes(num) {
+  let primes = [], sum = 0;
+  for (let i = 2; i <= num; i++) {
+    let prime = true;
+    for (let j = 2; j < i-1; j++) {
+      if (i % j === 0) {
+        prime = false;
+      }
+    }
+    if (prime === true) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+sumPrimes(10);
