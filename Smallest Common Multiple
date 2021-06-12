@@ -1,0 +1,17 @@
+function smallestCommons(arr) {
+ let found = false, i = Math.max(...arr);
+  while (found === false) {
+    let good = true;
+    for (let j = Math.min(...arr); j <= Math.max(...arr); j++) {
+      if (i % j != 0) {
+        good = false;
+        i += Math.max(...arr);
+      }
+    }
+    if (good === true) {
+      return i;
+    }
+  }
+}
+
+smallestCommons([1,5]);
